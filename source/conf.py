@@ -9,6 +9,7 @@
 import os
 import sys
 import time
+import datetime
 
 # autodoc required
 sys.path.insert(0, os.path.abspath('../../easyclimate/src'))  # Source code dir relative to this file
@@ -17,8 +18,8 @@ sys.path.insert(0, os.path.abspath('../../easyclimate/src'))  # Source code dir 
 localtime = time.localtime(time.time())
 str_year = str(localtime[0])
 
-project = 'Easy Climate'
-copyright = str_year + ', shenyulu（深雨露）'
+project = 'easyclimate'
+copyright = f"2022-{datetime.datetime.now().year}, shenyulu（深雨露）"
 author = 'shenyulu'
 release = 'v2023.11.0'
 
@@ -81,11 +82,21 @@ html_static_path = ['_static']
 html_theme_options = {
     "sidebar_hide_name": True,
     "top_of_page_button": "edit",
-    "announcement": "🚨 This package is still undergoing rapid development. 🚨",
+    "last-updated": True,
 }
 
 # Logo
 html_logo = "_static/easyclimate-logo.svg"
+
+
+# There are two options for replacing |today|: either, you set today to some
+# non-false value, then it is used:
+# today = ''
+# Else, today_fmt is used as the format for a strftime call.
+today_fmt = "%Y-%m-%d"
+# If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
+# using the given strftime format.
+html_last_updated_fmt = today_fmt
 
 # 添加编辑按钮
 html_theme_options = {
